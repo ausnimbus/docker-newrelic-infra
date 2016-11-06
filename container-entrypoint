@@ -1,4 +1,5 @@
 #!/bin/bash
 
 echo "license_key: $NEWRELIC_LICENSE_KEY" | tee -a /etc/newrelic-infra.yml
-exec /usr/sbin/init
+
+/usr/bin/newrelic-infra

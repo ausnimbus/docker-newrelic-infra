@@ -1,4 +1,4 @@
-FROM centos/systemd
+FROM centos
 
 MAINTAINER AusNimbus <support@ausnimbus.com.au>
 
@@ -10,8 +10,7 @@ LABEL io.k8s.description="New Relic Linux Infrastructure Agent" \
 
 RUN curl -s $INSTALL_SCRIPT | bash && \
     yum install newrelic-infra -y && \
-    yum clean all && \
-    systemctl enable newrelic-infra.service
+    yum clean all
 
 COPY container-entrypoint /usr/bin/
 

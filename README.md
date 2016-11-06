@@ -25,6 +25,7 @@ ExecStartPre=-/usr/bin/docker kill newrelic-infra
 ExecStartPre=-/usr/bin/docker rm newrelic-infra
 ExecStartPre=/usr/bin/docker pull ausnimbus/newrelic-infra:latest
 ExecStart=/usr/bin/docker run --name newrelic-infra  \
+--pid=host \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /dev:/dev \
 -v /sys:/sys \
